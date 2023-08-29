@@ -9,6 +9,10 @@ interface IListGroup {
 function ListGroup({ items, heading, onSelectItem }: IListGroup) {
   // Hook
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const itemObjects = items.map((item, index) => ({
+    id: index,
+    title: item,
+  }));
 
   return (
     <>
@@ -16,18 +20,18 @@ function ListGroup({ items, heading, onSelectItem }: IListGroup) {
       {/* {items.length === 0 ? <p>No item found</p> : null} */}
       {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
-        {items.map((item, index) => (
+        {itemObjects.map((item) => (
           <li
             className={
-              "list-group-item" + (selectedIndex === index ? " active" : "")
+              "list-group-item" + (selectedIndex === item.id ? " active" : "")
             }
-            key={item}
+            key={item.title}
             onClick={() => {
-              setSelectedIndex(index);
-              onSelectItem(item);
+              setSelectedIndex(item.id);
+              onSelectItem(item.title);
             }}
           >
-            {item}
+            {item.title}
           </li>
         ))}
       </ul>
