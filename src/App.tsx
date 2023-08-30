@@ -19,8 +19,8 @@ function App() {
   return (
     <>
       <div>
-        <Message/>
-        <CheckBox/>
+        <Message />
+        <CheckBox />
       </div>
       <div>
         <ListGroup
@@ -34,7 +34,7 @@ function App() {
           <Alert onClose={() => setAlertVisability(false)}>{emotion}</Alert>
         )}
         <Button
-          colour= "primary"
+          colour="primary"
           onClick={() => {
             setAlertVisability(true);
             setEmotion("Happy");
@@ -53,7 +53,7 @@ function App() {
         </Button>
       </div>
       <div>
-        <Footer><p>Copyright DeaLoux {new Date().getFullYear()}</p></Footer>
+        <Footer author="DeaLoux" year={new Date().getFullYear()} />
       </div>
     </>
   );

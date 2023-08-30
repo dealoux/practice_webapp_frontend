@@ -1,11 +1,14 @@
-import { IComponent } from "./Util"
-
-const Footer = ({children}: IComponent) => {
-  return (
-    <footer>
-      {children}
-    </footer>
-  )
+interface IFooter {
+  author: string;
+  year: number;
 }
 
-export default Footer
+const Footer = ({ author, year }: IFooter) => {
+  return (
+    <footer>
+      <p> Copyright {author} {year}</p>
+    </footer>
+  );
+};
+
+export default Footer;
