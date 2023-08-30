@@ -4,7 +4,7 @@ const CheckBox = () => {
   const [checked, setChecked] = useReducer((checked) => !checked, false);
 
   return (
-    <div>
+    <>
       <input
         type = "checkbox"
         value={Number(checked)}
@@ -13,7 +13,7 @@ const CheckBox = () => {
       <label>
         {checked ? "checked" : "not checked"}
       </label>
-    </div>
+    </>
   )
 }
 

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Message from "./components/Message";
+import Footer from "./components/Footer";
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import CheckBox from "./components/CheckBox";
-import Footer from "./components/Footer";
+import Form from "./components/Form";
 
 function App() {
   const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -21,6 +22,7 @@ function App() {
       <div>
         <Message />
         <CheckBox />
+        <Form />
       </div>
       <div>
         <ListGroup
@@ -51,6 +53,9 @@ function App() {
         >
           Sad
         </Button>
+      </div>
+      <div>
+
       </div>
       <div>
         <Footer author="DeaLoux" year={new Date().getFullYear()} />
