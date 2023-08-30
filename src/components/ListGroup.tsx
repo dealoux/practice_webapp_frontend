@@ -16,6 +16,11 @@ function ListGroup({ items, heading, onSelectItem }: IListGroup) {
 
   return (
     <>
+      <img 
+        height = {200}
+        src = "https://i.ytimg.com/vi/hWyhvVcKGKY/maxresdefault.jpg"
+        alt="Super Nenechi and her wife Wamy"
+      />
       <h1>{heading}</h1>
       {/* {items.length === 0 ? <p>No item found</p> : null} */}
       {items.length === 0 && <p>No item found</p>}
