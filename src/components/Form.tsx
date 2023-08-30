@@ -2,17 +2,21 @@ import { useRef, SyntheticEvent } from "react";
 
 const submit = (e: SyntheticEvent) =>{
   e.preventDefault();
+
   const target = e.target as typeof e.target &{
-    title: { value: string };
-    colour: { value: string };
+    email: { value: string };
+    password: { value: string };
   }
-  const title = target.title.value;
-  const colour = target.colour.value;
-  alert(`${title}, ${colour}`);
+
+  const email = target.email.value;
+  const password = target.password.value;
+
+  alert(`${email}, ${password}`);
+  console.log(`${email}, ${password}`);
 }
 
 const Form = () => {
-  const formRef = useRef<null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   return (
     <form 
