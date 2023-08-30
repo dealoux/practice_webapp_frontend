@@ -3,6 +3,7 @@ import Message from "./components/Message";
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import CheckBox from "./components/CheckBox";
 import Footer from "./components/Footer";
 
 function App() {
@@ -13,11 +14,13 @@ function App() {
   };
 
   const [alertVisible, setAlertVisability] = useState(false);
+  const [emotion, setEmotion] = useState("Happy");
 
   return (
     <>
       <div>
-        <Message />
+        <Message/>
+        <CheckBox/>
       </div>
       <div>
         <ListGroup
@@ -28,16 +31,29 @@ function App() {
       </div>
       <div>
         {alertVisible && (
-          <Alert onClose={() => setAlertVisability(false)}>Alert</Alert>
+          <Alert onClose={() => setAlertVisability(false)}>{emotion}</Alert>
         )}
-        <Button colour="danger" onClick={() => setAlertVisability(true)}>
-          Button
+        <Button
+          colour= "primary"
+          onClick={() => {
+            setAlertVisability(true);
+            setEmotion("Happy");
+          }}
+        >
+          Happy
+        </Button>
+        <Button
+          colour="danger"
+          onClick={() => {
+            setAlertVisability(true);
+            setEmotion("Sad");
+          }}
+        >
+          Sad
         </Button>
       </div>
       <div>
-        <Footer year = {(new Date().getFullYear())}>
-          Dealoux
-        </Footer>
+        <Footer><p>Copyright DeaLoux {new Date().getFullYear()}</p></Footer>
       </div>
     </>
   );

@@ -1,8 +1,7 @@
-import { ReactNode } from "react";
+import { IComponent, Colour } from "./Util";
 
-interface IButton {
-  children: ReactNode;
-  colour?: "primary" | "secondary" | "danger";
+interface IButton extends IComponent {
+  colour?: Colour;
   onClick: () => void;
 }
 const Button = ({ children, colour = "primary", onClick }: IButton) => {

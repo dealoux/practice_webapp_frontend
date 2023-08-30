@@ -1,13 +1,9 @@
-import { ReactNode } from "react";
+import { IComponent } from "./Util"
 
-interface IFooter{
-  children: ReactNode;
-  year: number;
-}
-const Footer = ({children, year}: IFooter) => {
+const Footer = ({children}: IComponent) => {
   return (
     <footer>
-      <p>Copyright {children} {year}</p>
+      {children}
     </footer>
   )
 }

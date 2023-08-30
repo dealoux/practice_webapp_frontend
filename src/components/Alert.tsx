@@ -1,13 +1,12 @@
-import { ReactNode } from "react";
+import { IComponent, Colour } from "./Util";
 
-interface IAlert {
-  children: ReactNode;
-  type?: "primary" | "success" | "info";
+interface IAlert extends IComponent {
+  colour?: Colour;
   onClose: () => void;
 }
-const Alert = ({ children, type = "info", onClose }: IAlert) => {
+const Alert = ({ children, colour = "info", onClose }: IAlert) => {
   return (
-    <div className={"alert alert-" + type + " alert-dismissible"}>
+    <div className={"alert alert-" + colour + " alert-dismissible"}>
       {children}
       <button
         type="button"

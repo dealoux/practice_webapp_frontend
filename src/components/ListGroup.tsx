@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface IListGroup {
   items: string[];
@@ -13,6 +13,10 @@ function ListGroup({ items, heading, onSelectItem }: IListGroup) {
     id: index,
     title: item,
   }));
+
+  useEffect(() =>{
+    console.log(`${items[selectedIndex] ? items[selectedIndex] : "Nothing"} is selected`);
+  }, [selectedIndex]);
 
   return (
     <>
