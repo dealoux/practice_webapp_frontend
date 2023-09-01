@@ -6,9 +6,9 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 COPY package*.json /usr/src/app/
 
-RUN npm i
+RUN npm install
 
-COPY . /usr/src/app
+COPY . /usr/src/app/
 
 EXPOSE 5173
 CMD ["npm", "run", "dev"]
