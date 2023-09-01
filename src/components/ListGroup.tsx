@@ -7,42 +7,46 @@ interface IListGroup {
 }
 
 function ListGroup({ items, heading, onSelectItem }: IListGroup) {
-  // Hook
+  // Hooks
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  useEffect(() =>{
+    console.log(`${items[selectedIndex] ? items[selectedIndex] : "Nothing"} is selected`);
+  }, [selectedIndex]);
+
+
+  if(items.length === 0){
+    return <p>This list is empty</p>;
+  }
+
   const itemObjects = items.map((item, index) => ({
     id: index,
     title: item,
   }));
 
-  useEffect(() =>{
-    console.log(`${items[selectedIndex] ? items[selectedIndex] : "Nothing"} is selected`);
-  }, [selectedIndex]);
+  const renderItem = () => {
+    return itemObjects.map((item) => (
+      <li
+        className={
+          "list-group-item" + (selectedIndex === item.id ? " active" : "")
+        }
+        key={item.title}
+        onClick={() => {
+          setSelectedIndex(item.id);
+          onSelectItem(item.title);
+        }}
+      >
+        {item.title}
+      </li>
+    ))
+  };
 
   return (
     <>
-      <img 
-        height = {200}
-        src = "https://i.ytimg.com/vi/hWyhvVcKGKY/maxresdefault.jpg"
-        alt="Super Nenechi and her wife Wamy"
-      />
       <h1>{heading}</h1>
       {/* {items.length === 0 ? <p>No item found</p> : null} */}
       {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
-        {itemObjects.map((item) => (
-          <li
-            className={
-              "list-group-item" + (selectedIndex === item.id ? " active" : "")
-            }
-            key={item.title}
-            onClick={() => {
-              setSelectedIndex(item.id);
-              onSelectItem(item.title);
-            }}
-          >
-            {item.title}
-          </li>
-        ))}
+        {renderItem()}
       </ul>
     </>
   );

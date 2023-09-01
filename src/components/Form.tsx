@@ -1,4 +1,6 @@
 import { useState, useRef, SyntheticEvent } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 /* Controlled elements */
 const Form = () => {
@@ -7,12 +9,14 @@ const Form = () => {
 };
 
 const ControlledElement = () =>{
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submit = (e: SyntheticEvent) => {
     e.preventDefault();
     alert(`${email}, ${password}`);
+    navigate("/");
   };
 
   return (
@@ -48,6 +52,8 @@ const ControlledElement = () =>{
 
 /* Uncontrolled elements */
 const UnControlledElement = () => {
+  const navigate = useNavigate();
+
   const formRef = useRef<HTMLFormElement>(null);
 
   const submit = (e: SyntheticEvent) =>{
@@ -62,6 +68,8 @@ const UnControlledElement = () => {
     const password = target.password.value;
 
     alert(`${email}, ${password}`);
+
+    navigate("/");
   }
 
   return (
