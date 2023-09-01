@@ -1,14 +1,11 @@
 FROM node
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
+WORKDIR /app
 
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
-
-COPY package*.json ./usr/src/app
+COPY package*.json .
 
 RUN npm i
 
-COPY . ./usr/src/app
+COPY . .
 
 EXPOSE 5173
 CMD ["npm", "run", "dev"]
