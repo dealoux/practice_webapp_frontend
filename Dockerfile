@@ -1,11 +1,13 @@
 FROM node
 WORKDIR /app
 
+ARG VITE_PORT
+
 COPY package*.json .
 
 RUN npm i
 
 COPY . .
 
-EXPOSE 5173
+EXPOSE ${VITE_PORT}
 CMD ["npm", "run", "dev"]
