@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/dealoux/webapp.svg?branch=travis-ci)](https://app.travis-ci.com/dealoux/webapp)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
