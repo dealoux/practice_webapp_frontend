@@ -3,5 +3,5 @@ services:
   - docker
 
 script:
-  - docker buidld -t dealoux/webapp
+  - docker build -t dealoux/webapp
   - docker images dealoux/webapp
