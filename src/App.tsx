@@ -6,6 +6,7 @@ import Alert from "./components/Alert";
 import Button from "./components/Button";
 import CheckBox from "./components/CheckBox";
 import Form from "./components/Form";
+import DataFetch from "./components/DataFetch";
 
 function App() {
   const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -55,7 +56,7 @@ function App() {
         </Button>
       </div>
       <div>
-
+        <DataFetch/>
       </div>
       <div>
         <Footer author="DeaLoux" year={new Date().getFullYear()} />
