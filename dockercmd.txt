@@ -1,7 +1,0 @@
-docker login -u ${dockerUsername} -p ${dockerPassword}
-docker build -t (your docker name)/(repository name):(version) .
-docker push (your docker name)/(repository name):(version) 
-
-docker build -t dealoux/webapp-practice .
-docker push dealoux/webapp-practice
-docker run dealoux/webapp-practice -p 5173:80 

@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker buidld -t dealoux/webapp
+  - docker images dealoux/webapp
