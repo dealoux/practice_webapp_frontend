@@ -16,7 +16,7 @@ const ControlledElement = () =>{
   const submit = (e: SyntheticEvent) => {
     e.preventDefault();
     alert(`${email}, ${password}`);
-    navigate("/");
+    navigate("/home");
   };
 
   return (

@@ -14,7 +14,7 @@ export function About() {
     <>
       <Footer author="DeaLoux" year={new Date().getFullYear()} />
       <nav>
-        <Link to="/login">Close</Link>
+        <Link to="/">Close</Link>
       </nav>
     </>
   );
@@ -26,7 +26,7 @@ export function Login() {
       <Form />
       <Outlet />
       <nav>
-        <Link to="/login/about">Super Nenec</Link>
+        <Link to="/about">Super Nenec</Link>
       </nav>
     </>
   );
@@ -36,7 +36,7 @@ export function Fetch() {
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/home">Home</Link>
       </nav>
       <DataFetch />
     </>
@@ -50,7 +50,7 @@ export function State() {
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/home">Home</Link>
       </nav>
       <Button
         colour="primary"
@@ -98,7 +98,7 @@ export function Home() {
         />
       </div>
       <nav>
-        <Link to="/login">Log out</Link>
+        <Link to="/">Log out</Link>
       </nav>
     </>
   );
